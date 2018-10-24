@@ -1,5 +1,6 @@
-async function index(ctx) {
-  await ctx.ok({ message: 'Coming soon...' });
+async function getAllAssignments(ctx) {
+  let assignments = await ctx.state.user.findAllAssignments();
+  await ctx.ok({ assignments });
 }
 
-module.exports = { index };
+module.exports = { getAllAssignments };
