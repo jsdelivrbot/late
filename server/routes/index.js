@@ -5,5 +5,6 @@ module.exports = router => {
   router.use('/api', cas.bounce, require('./api'));
   router.use('/assignments', cas.bounce, require('./assignments'));
   router.use('/setup', cas.bounce, require('./setup'));
+  router.use('/dashboard', cas.bounce, require('./dashboard'));
   router.use('/', require('./home'));
 };

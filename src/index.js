@@ -1,4 +1,4 @@
-import About from './Dashboard.vue';
+import Dashboard from './Dashboard.vue';
 
 Vue.config.productionTip = false;
 
