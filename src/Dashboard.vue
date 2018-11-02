@@ -16,13 +16,20 @@
 			<!-- TODO: will also display summary and details of assignment once that data is available -->
 			<!-- default show day -->
 			<div v-if="todos">
-			    <li v-for="todo in todos"id="dashboard">
-			      {{ todo }}
+			    <li v-for="todo in week" id="dashboard">
+            <details>
+			        <summary>{{todo.title}}</summary>
+              <p>{{todo.description}}</p>
+            </details>
 			    </li>
+
 			</div>
 			<div v-else="ok">
 			    <li v-for="todo in day"id="dashboard">
-			      {{ todo }}
+			      <details>
+              <summary>{{todo}}</summary>
+              <p>{{todo}}</p>
+            </details>
 			    </li>
 			</div>
 		</ol>
@@ -32,7 +39,6 @@
 </template>
 
 
-
 <script>
 	export default {
 	  	name: 'dashboard',
@@ -40,7 +46,24 @@
 		data() {
 			return{
 				//TODO: week and day should be fetched from be will be of type assignment[]
-			    week: ["Stupid Hass essay due 10/12 12-3pm","Circuits hw due 10/22", "Data Structures test studying for 10/25"],
+			    //week: ["Stupid Hass essay due 10/12 12-3pm","Circuits hw due 10/22", "Data Structures test studying for 10/25"],
+          week:[
+            {
+              "title":"Essay",
+              "description":'yaliyaliyada',
+              "expectedDuration":'4hrs',
+            },
+            { 
+              "title":'DS HW',
+              "description":'cool',
+              "expectedDuration":'2hrs',
+            },
+            {
+              "title":'Physics HW',
+              "description":'okay',
+              "expectedDuration":'3hrs',
+            }
+          ],
 			    day: ["Stupid Hass essay due 10/12"],
 			    showing:"day",
 			    todos: undefined,
@@ -56,6 +79,9 @@
 	}
 </script>
 
+})
+
+
 
 
 
@@ -63,6 +89,10 @@
 <style lang='scss'>
 /*TODO: there needs to be LOTS of styling done on this*/
 /*//-Button Interactions and Styling-//*/
+
+details.assignDetails{
+  background-color:red;
+}
 button{
     background-color:#ff3860;
     color:white;

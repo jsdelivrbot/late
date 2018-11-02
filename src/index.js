@@ -8,3 +8,23 @@ new Vue({
   template: '<Dashboard/>',
   components: { Dashboard }
 });
+
+
+
+/*
+new Vue({
+	el:'#display',
+	template:''
+});
+
+Vue.component('assignment-component',{
+  template:
+    <div class="assignmentBox">
+      <details>
+        <summary>{{studentAssigns.title}}</summary>
+        <p>{{studentAssigns.description}}</p>
+        <p>{{studentAssigns.expectedDuration}}</p>
+      </details>
+    </div>
+  </template>
+  */
