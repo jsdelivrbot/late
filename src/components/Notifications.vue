@@ -4,13 +4,13 @@
     class="notifications"
   >
     <div
-      v-for="(n, index) in notifications"
-      :key="index"
-      :class="'is-' + n.type"
+      v-for="note in notifications"
+      :key="note"
+      :class="'is-' + note.type"
       class="notification"
     ><button
       class="delete"
-      @click="remove(index)"
+      @click="remove(note)"
     />{{ n.description }}</div>
   </div>
 </template>
@@ -27,8 +27,8 @@ export default {
     }
   },
   methods: {
-    remove(index) {
-      this.$store.commit('REMOVE_NOTIFICATION', index);
+    remove(notification) {
+      this.$store.commit('REMOVE_NOTIFICATION', notification);
     }
   }
 };
