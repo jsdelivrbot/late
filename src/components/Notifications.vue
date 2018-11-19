@@ -11,7 +11,7 @@
     ><button
       class="delete"
       @click="remove(note)"
-    />{{ n.description }}</div>
+    />{{ note.description }}</div>
   </div>
 </template>
 
