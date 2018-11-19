@@ -1,6 +1,4 @@
-//New code
 const defaultDuration = 8000;
-//End
 
 
 const state = {
