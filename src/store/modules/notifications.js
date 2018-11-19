@@ -9,7 +9,6 @@ const state = {
 
 const getters = {};
 
-//New code
 const actions ={
   Add({ commit } , notification){
 
@@ -28,12 +27,12 @@ const actions ={
     context.commit('REMOVE_NOTIFICATION', notification);
   }
 };
-//End
+
 const mutations = {
   ADD_NOTIFICATION: (state, notification) => {
     state.list.push(notification);
   },
-  //Edited Code
+
   REMOVE_NOTIFICATION: (state, rawNotification) => {
     var i = state.list.map(n=> n.Raw).indexOf(rawNotification);
     if (i == -1){
@@ -42,7 +41,7 @@ const mutations = {
     clearTimeout(state.list[i].TimeOut);
     state.list.splice(index, 1);
   }
-  //End
+
 };
 
 export default {
